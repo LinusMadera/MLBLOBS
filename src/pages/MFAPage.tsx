@@ -21,7 +21,7 @@ const MFAPage: React.FC = () => {
 
   useEffect(() => {
     inputRefs.current[0]?.focus();
-  }, []);
+  }, []); //hello
 
   const handleChange = (index: number, value: string) => {
     const newMfaCode = [...mfaCode];
