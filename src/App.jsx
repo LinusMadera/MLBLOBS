@@ -177,22 +177,22 @@ const App = () => {
  const rotateScene = (isForward) => {
   const rotateAnimation = () => {
     const targetRotation = {
-      x: scene.current.rotation.x + (Math.random() - 0.5) * Math.PI,
-      y: scene.current.rotation.y + (isForward ? Math.PI : -Math.PI) + (Math.random() - 0.5) * Math.PI,
-      z: scene.current.rotation.z + (Math.random() - 0.5) * Math.PI,
+      x: scene.current.rotation.x + (Math.random() - 0.5) * 0.1,
+      y: scene.current.rotation.y + (isForward ? 0.1 : -0.1) + (Math.random() - 0.5) * 0.1,
+      z: scene.current.rotation.z + (Math.random() - 0.5) * 0.1,
     };
 
     const rotationStep = {
-      x: (targetRotation.x - scene.current.rotation.x) / 60,
-      y: (targetRotation.y - scene.current.rotation.y) / 60,
-      z: (targetRotation.z - scene.current.rotation.z) / 60,
+      x: (targetRotation.x - scene.current.rotation.x) / 120,
+      y: (targetRotation.y - scene.current.rotation.y) / 120,
+      z: (targetRotation.z - scene.current.rotation.z) / 120,
     };
 
     const animate = () => {
       if (
-        Math.abs(scene.current.rotation.x - targetRotation.x) > 0.01 ||
-        Math.abs(scene.current.rotation.y - targetRotation.y) > 0.01 ||
-        Math.abs(scene.current.rotation.z - targetRotation.z) > 0.01
+        Math.abs(scene.current.rotation.x - targetRotation.x) > 0.001 ||
+        Math.abs(scene.current.rotation.y - targetRotation.y) > 0.001 ||
+        Math.abs(scene.current.rotation.z - targetRotation.z) > 0.001
       ) {
         scene.current.rotation.x += rotationStep.x;
         scene.current.rotation.y += rotationStep.y;
@@ -206,6 +206,8 @@ const App = () => {
 
   rotateAnimation();
 };
+
+
 
 
  const slides = [
